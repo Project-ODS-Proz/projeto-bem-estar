@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-Estar Integral</title>
+
+    <!--Chamada (linkagem) da biblioteca Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--Script do Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!--Icones Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!--Chamada (linkaguem) do arquivo CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!--Chamada (linkagem) da biblioteca dos icones (fontawesome)-->
+    <link rel="stylesheet" href="./plugins/fontawesome/css/all.min.css">
+
+    <!--Chamada (linkaguem) do arquivo JavaScript-->
+    <script src="./assets/js/all.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <!--start nav_bar-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="height: 80px;">
+
+            <!--start logo-->
+            <nav class="navbar bg-body-tertiary">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="./assets/img/home/logo/logo.svg" alt="logo" width="" height="50">
+                    </a>
+                </div>
+            </nav>
+            <!--end logo-->
+
+            <div class="container-fluid">
+                <a class="navbar-brand text-primary" href="./index.html"><strong>Home</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./sections/receitas.html">Receitas
+                                Culinárias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./sections/space_fisico.html">Espaço
+                                Físico</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./sections/space_mental.html">Espaço
+                                mental</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./sections/cadastro.html">Cadastro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./sections/contato.html">Contato</a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Pesquisar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!--end nav_bar-->
+    </header>
+
+    <main>
+        <!--Título-->
+        <div id="titulo_main">
+            <h1>Bem-Estar Integral</h1>
+            <h2>Cuidando da sua Saúde Mental</h2>
+        </div>
+        <!--Seção 1 - calculadora_imc & Carrossel -->
+        <secton id="secao1">
+
+            <!--start container_imc-->
+            <div id="container_imc">
+                <!--start imagem (logo)-->
+                <section id="img">
+                    <img src="./assets/img/home/calc_imc/logo_imc.svg" alt="logo imc" height="400px">
+                </section>
+                <!--end imagem (logo)-->
+
+                <!--start calculadora-->
+                <section id="calc_imc">
+
+                    <form id="form">
+
+                        <h4 id="titulo"> Calculadora - IMC</h4>
+                        <!--start input_peso-->
+                        <div class="input-box">
+                            <label for="peso">Peso em kg</label>
+                            <div class="icones">
+                                <i class="fa-solid fa-weight-hanging"></i>
+                                <input type="number" id="peso" required>
+                                <span>kg</span>
+                            </div>
+                        </div>
+                        <!--end input_peso-->
+
+                        <!--start input_altura-->
+                        <div class="input-box">
+                            <label for="altura">Altura em metros</label>
+                            <div class="icones">
+                                <i class="fa-solid fa-ruler"></i>
+                                <input type="number" step="0.01" id="altura" required>
+                                <span>m</span>
+                            </div>
+                        </div>
+                        <!--end input_altura-->
+
+                        <!--star botão-->
+                        <button id="calcular">Calcular</button>
+                        <!--end botão-->
+
+                    </form>
+                    <!--start demonstração do resultado-->
+                    <div id="infos" class="hidden">
+                        <div id="result">
+                            <div id="imc">
+                                <span id="valor"></span>
+                                <span>Seu IMC</span>
+                            </div>
+                            <div id="descricao">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div id="mais_infos">
+                            <a
+                                href="https://www.uol.com.br/vivabem/faq/imc-como-calcular-tabela-dicas-como-melhorar-e-mais.htm">
+                                Mais Informações sobre o IMC
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!--end demonstração do resultado-->
+                </section>
+                <!--end calculadora-->
+
+            </div>
+            <!--end container_imc-->
+
+            <!--start container_carrossel-->
+            <div id="sliders">
+                <span>Opções de Práticas Saudáveis</span>
+                <!--start carrossel-->
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <!--start btns dos sliders-->
+                    <div class="carousel-indicators">
+                        <!--btn1_indicador-->
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <!--btn2_indicador-->
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <!--btn3_indicador-->
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <!--btn4_indicador-->
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                        <!--btn5_indicador-->
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                            aria-label="Slide 5"></button>
+                        <!--btn6_indicador-->
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                            aria-label="Slide 6"></button>
+                        <!--btn7_indicador-->
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+                            aria-label="Slide 7"></button>
+                        <!--btn8_indicador-->
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7"
+                            aria-label="Slide 8"></button>
+                    </div>
+                    <!--end btns dos sliders-->
+
+                    <!--Sliders-->
+                    <div class="carousel-inner">
+                        <!--slider 1-->
+                        <div class="carousel-item active">
+                            <span>Exames Cardiológicos</span>
+                            <img src="./assets/img/home/slider/img1.svg" class="d-block w-100" alt="..." height="450">
+                        </div>
+                        <!--slider 2-->
+                        <div class="carousel-item">
+                            <span>Check-ups</span>
+                            <img src="./assets/img/home/slider/img2.svg" class="d-block w-100" alt="..." height="450">
+                        </div>
+                        <!--slider 3-->
+                        <div class="carousel-item">
+                            <span>Caminhar</span>
+                            <img src="./assets/img/home/slider/img3.svg" class="d-block w-100" alt="..." height="450">
+                        </div>
+                        <!--slider 4-->
+                        <div class="carousel-item">
+                            <span>Andar de bicicleta</span>
+                            <img src="./assets/img/home/slider/img4.svg" class="d-block w-100" alt="..." height="450">
+                        </div>
+                        <!--slider 5-->
+                        <div class="carousel-item">
+                            <span>Correr</span>
+                            <img src="./assets/img/home/slider/img5.svg" class="d-block w-100" alt="..." height="450">
+                        </div>
+                        <!--slider 6-->
+                        <div class="carousel-item">
+                            <span>Praticar esportes</span>
+                            <img src="./assets/img/home/slider/img6.svg" class="d-block w-100" alt="..." height="450">
+                        </div>
+                        <!--slider 7-->
+                        <div class="carousel-item">
+                            <span>Praticar exercício físico</span>
+                            <img src="./assets/img/home/slider/img7.svg" class="d-block w-100" alt="..." height="450">
+                        </div>
+                        <!--slider 8-->
+                        <div class="carousel-item">
+                            <span>Treino cardio</span>
+                            <img src="./assets/img/home/slider/img8.svg" class="d-block w-100" alt="..." height="450">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <!--end carrossel-->
+            </div>
+            <!--end container_carrossel-->
+        </secton>
+        <br>
+
+        <!--Seção 2 cards informativos-->
+        <secton id="secao2">
+            <h4>Doenças mentais mais comuns</h4>
+            <br>
+            <!--start card_info-->
+            <div class="cards_info1">
+                <!--card1-->
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Transtornos neurocognitivos</h5>
+                        <p class="card-text">Parkinson</p>
+                        <p class="card-text">Alzheimer</p>
+                        <p class="card-text">Outras</p>
+                        <a href="https://telemedicinamorsch.com.br/blog/doencas-mentais" class="btn btn-primary">Saiba
+                            mais</a>
+                    </div>
+                </div>
+                <!--card2-->
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Transtornos de neurodesenvolvimento</h5>
+                        <p class="card-text">Autismo</p>
+                        <p class="card-text">Déficit de atenção (TDAH)</p>
+                        <a href="https://telemedicinamorsch.com.br/blog/doencas-mentais" class="btn btn-primary">Saiba
+                            mais</a>
+                    </div>
+                </div>
+                <!--card3-->
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Transtornos psicóticos</h5>
+                        <p class="card-text">Esquizofrenia</p>
+                        <p class="card-text">Transtorno delirante</p>
+                        <a href="https://telemedicinamorsch.com.br/blog/doencas-mentais" class="btn btn-primary">Saiba
+                            mais</a>
+                    </div>
+                </div>
+                <!--card4-->
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Transtornos ansiosos</h5>
+                        <p class="card-text">Fobias</p>
+                        <p class="card-text">Sindrome do Pânico</p>
+                        <p class="card-text">Ansiedade generalizada</p>
+                        <a href="https://telemedicinamorsch.com.br/blog/doencas-mentais" class="btn btn-primary">Saiba
+                            mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cards_info2">
+                <!--card5-->
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Transtornos depressivos</h5>
+                        <p class="card-text">Depressão</p>
+                        <p class="card-text">Distimia</p>
+                        <a href="https://telemedicinamorsch.com.br/blog/doencas-mentais" class="btn btn-primary">Saiba
+                            mais</a>
+                    </div>
+                </div>
+                <!--card6-->
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Transtorno de personalidade</h5>
+                        <p class="card-text">Anti social</p>
+                        <p class="card-text">Borderline</p>
+                        <p class="card-text">Transtorno bipolar</p>
+                        <a href="https://telemedicinamorsch.com.br/blog/doencas-mentais" class="btn btn-primary">Saiba
+                            mais</a>
+                    </div>
+                </div>
+                <!--card7-->
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Transtorno relacionados ao uso de psicoativos</h5>
+                        <p class="card-text">Dependência de álcool</p>
+                        <p class="card-text">Dependência de cigarro</p>
+                        <p class="card-text">Dependência de drogas ilícitas</p>
+                        <a href="https://telemedicinamorsch.com.br/blog/doencas-mentais" class="btn btn-primary">Saiba
+                            mais</a>
+                    </div>
+                </div>
+                <!--card8-->
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Transtorno do sono</h5>
+                        <p class="card-text">Insônia</p>
+                        <p class="card-text">Hipersonolência</p>
+                        <p class="card-text">Outros</p>
+                        <a href="https://telemedicinamorsch.com.br/blog/doencas-mentais" class="btn btn-primary">Saiba
+                            mais</a>
+                    </div>
+                </div>
+            </div>
+            <!--end card_info-->
+
+        </secton>
+        <br>
+        <br>
+
+    </main>
+
+    <!--Rodapé-->
+    <footer class="rodape">
+        <!--Links de extras-->
+        <div class="footer_left">
+            <a href="#">Termo de serviço</a>
+            <a href="#">Politica de privacidade</a>
+            <a href="#">Quem Somos</a>
+        </div>
+
+        <div class="footer_rigth">
+
+            <!--Start contato-->
+            <div class="contact-form">
+                <h2>Ajuda</h2>
+                <form class="contact" action="" method="post">
+                    <input type="text" name="name" class="text-box" placeholder="Seu nome" required>
+                    <input type="email" name="email" class="text-box" placeholder="Seu e-mail" required>
+                    <textarea name="message" rows="5" placeholder="Digite sua mensagem" required></textarea>
+                    <input type="submit" name="submit" class="enviar-btn" value="Enviar">
+                </form>
+            </div>
+            <!--End contato-->
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

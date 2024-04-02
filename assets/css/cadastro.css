@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+/*Estilização da Estrutura*/
+#estrutura {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(74, 206, 246, 1) 0%, rgba(96, 178, 246, 1) 38%, rgba(0, 212, 255, 1) 100%);
+    height: 40rem;
+    margin: 1 5rem;
+}
+
+#estrutura {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#estrutura h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: rgb(255, 255, 255);
+}
+
+#estrutura .social-media {
+    display: flex;
+    align-items: center;
+    justify-content: ce;
+}
+
+#estrutura .social-media a {
+    text-decoration: none;
+}
+
+#estrutura .social-media img {
+    width: 45px;
+    margin-left: 3rem;
+}
+
+/*remover a margem a esquerda do logo do google*/
+/*first-child -> primeiro filho*/
+#estrutura .social-media a:first-child img {
+    margin-left: 0;
+}
+
+/* ---OR--- */
+#estrutura .alternative {
+    margin-top: 1rem;
+}
+
+#estrutura .alternative span {
+    color: rgb(255, 255, 255);
+    position: relative;
+}
+
+/*barras do OR*/
+#estrutura .alternative span::before,
+#estrutura .alternative span::after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 100px;
+    bottom: 50%;
+    right: 50px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#estrutura .alternative span::after {
+    left: 50px;
+}
+
+
+/*Estrutua do formulário*/
+#formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: 40rem;
+}
+
+
+/*Estilização do formulário*/
+
+#estrutura form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#estrutura form label {
+    display: flex;
+    flex-direction: column;
+}
+
+/*fonte do formulário*/
+#estrutura form label span {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+/*campos do formulário*/
+
+#estrutura form input {
+    width: 300px;
+    height: 50px;
+    padding: 0 0.5rem;
+    margin-top: 0.8rem;
+    /*remoção da borda*/
+    outline: none;
+    /*cor da fonte e borda do campo*/
+    color: rgb(183, 82, 201);
+    font-size: 1rem;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+
+/* Estilização da imagem*/
+
+#img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    height: 40rem;
+}
+
+/*Footer*/
+
+.rodape {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #fff;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.footer_left {
+    width: 30%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 10px;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.footer_left a {
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 10px;
+    font-style: italic;
+    text-decoration: none;
+    color: #8a5cc2;
+}
+
+.footer_left a:hover {
+    color: #0ab47b;
+    cursor: pointer;
+}
+
+.footer_rigth {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    /*garantir que a imagem de plano de fundo usada cubra totalmente o elemeto no qual foi aplicado*/
+    background-image: url(../img/home/others/help_desk2.jpg);
+}
+
+/*BOX mensagem*/
+.contact-form {
+    max-width: 700px;
+    margin-right: 50px;
+    /*maneira abreviada de definir flex-grow, flex-shrink e flex-basis, faz com que o item se torne flexível para preencher todo o espaço diponível do contẽnier*/
+    flex: 1;
+}
+
+
+
+
+.contact-form h2 {
+    color: #0ab47b;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.contact-form .text-box {
+    background: #8a5cc2;
+    color: #fff;
+    border: none;
+    width: calc(50% - 10px);
+    height: 50px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    /* transparência 0 - completamente transparente e 1 totamente opaco*/
+    opacity: 0.9;
+
+}
+
+.contact-form .text-box:first-child {
+    /*ordenar como primeiro filho do elemento pai*/
+    margin-right: 15px;
+}
+
+.contact-form textarea {
+    /* área (box) mensagem*/
+    background: #8a5cc2;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    min-height: 200px;
+    max-height: 400px;
+    /*especifica que um elemento pode ser redimensionado verticalmente pelo usuário.*/
+    resize: vertical;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact-form .enviar-btn {
+    /*Movimentação do elemento para a direita*/
+    float: right;
+    background: #8a5cc2;
+    color: #fff;
+    border: none;
+    width: 120px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    transition: 0.3s;
+    transition-property: background;
+}
+
+.contact-form .enviar-btn:hover {
+    background: #0ab47b;
+    cursor: pointer;
+}
